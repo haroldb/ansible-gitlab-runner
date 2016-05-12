@@ -14,3 +14,13 @@ gitlab_runner_executor: 'shell'
 gitlab_runner_docker_image: ''
 # Runner tags
 gitlab_runner_tags: []
+# SSH user (ex. user)
+gitlab_runner_ssh_user: ''
+# SSH host (ex. localhost)
+gitlab_runner_ssh_host: ''
+# SSH Port (ex. 22)
+gitlab_runner_ssh_port: ''
+# SSH Passwrod (ex. 12345) (Doesn't offered, would rather use identity file)
+gitlab_runner_ssh_password: ''
+# SSH Identity file (ex. /home/user/.ssh/id_rsa)
+gitlab_runner_ssh_identity_file: ''
