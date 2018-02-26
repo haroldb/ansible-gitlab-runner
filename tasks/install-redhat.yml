@@ -3,7 +3,7 @@
 - name: RHEL | Install GitLab GPG key
   rpm_key:
     state: present
-    key: https://packages.gitlab.com/gpg.key
+    key: https://packages.gitlab.com/runner/gitlab-runner/gpgkey
   when: ansible_os_family == 'RedHat'
   tags:
     - gitlab
@@ -19,11 +19,11 @@
 
 - name: Add GitLab Runner rpm repo
   template:
-    src: runner_gitlab-ci-multi-runner.repo.j2
-    dest: /etc/yum.repos.d/runner_gitlab-ci-multi-runner.repo
+    src: runner_gitlab-runner.repo.j2
+    dest: /etc/yum.repos.d/runner_gitlab-runner.repo
 
 - name: Install GitLab Runner
   yum:
-    name: gitlab-ci-multi-runner
+    name: gitlab-runner
     state: latest
     update_cache: yes
