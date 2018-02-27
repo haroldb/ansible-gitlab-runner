@@ -14,11 +14,11 @@
 
 - name: Add GitLab Runner apt repo
   apt_repository:
-    repo: 'deb https://packages.gitlab.com/runner/gitlab-ci-multi-runner/{{ ansible_distribution | lower }}/ {{ ansible_distribution_major_version }} main'
+    repo: 'deb https://packages.gitlab.com/runner/gitlab-runner/{{ ansible_distribution | lower }}/ {{ ansible_distribution_major_version }} main'
     state: present
 
 - name: Install GitLab Runner
   apt:
-    name: gitlab-ci-multi-runner
+    name: gitlab-runner
     state: latest
     update_cache: yes
