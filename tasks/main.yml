@@ -1,11 +1,6 @@
 ---
-- name: Install GitLab Runner (Debian)
-  include: install-debian.yml
-  when: ansible_os_family == 'Debian'
-
-- name: Install GitLab Runner (RedHat)
-  include: install-redhat.yml
-  when: ansible_os_family == 'RedHat'
+- name: "Install GitLab Runner ({{ ansible_os_family }})"
+  include: "{{ ansible_os_family | lower }}.yml"
 
 - name: Set global options
   include: global-setup.yml

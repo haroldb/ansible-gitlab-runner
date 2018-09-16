@@ -9,12 +9,12 @@
     name: '{{ item }}'
     state: present
   with_items:
-    - debian-archive-keyring
     - apt-transport-https
+    - debian-archive-keyring
 
 - name: Add GitLab Runner apt repo
   apt_repository:
-    repo: 'deb https://packages.gitlab.com/runner/gitlab-ci-multi-runner/{{ ansible_distribution | lower }}/ {{ ansible_distribution_major_version }} main'
+    repo: 'deb https://packages.gitlab.com/runner/gitlab-ci-multi-runner/{{ ansible_distribution | lower }}/ {{ ansible_distribution_release }} main'
     state: present
 
 - name: Install GitLab Runner
