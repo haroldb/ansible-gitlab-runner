@@ -14,3 +14,7 @@ gitlab_runner_executor: 'shell'
 gitlab_runner_docker_image: ''
 # Runner tags
 gitlab_runner_tags: []
+# Privileged mode
+gitlab_runner_docker_privileged: false
+# Volumes
+gitlab_runner_docker_volumes: []
